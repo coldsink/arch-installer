@@ -158,4 +158,16 @@ read -p " -> " network
 		clear
 		cp /arch_install_2.sh /mnt
 		arch-chroot /mnt ./arch_install_2.sh
-		
+		rm -f /mnt/arch_install_2.sh
+		umount -R /mnt
+		echo " > Reboot now? (yes) (no) "
+		read -p " -> " reboot
+		if [ reboot = yes ]
+		then
+			killall dhcpcd
+			clear
+			killall netctl
+			clear
+		else
+			break
+		fi
