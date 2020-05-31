@@ -1,6 +1,6 @@
 #! /bin/bash
 
-prompt="echo "======================================================================"
+prompt="echo "================================================================================"
 clear
 $prompt
 echo
@@ -141,6 +141,7 @@ read -p " -> " network
 		$prompt
 		sleep 3s
 		clear
+	fi
 $prompt
 echo
 echo "Installation finished. Rebooting... "
