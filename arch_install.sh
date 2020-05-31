@@ -148,7 +148,6 @@ read -p " -> " network
 		$prompt
 		genfstab -U /mnt >> /mnt/etc/fstab
 		sleep 0.5s
-		cp arch_install_2.sh /mnt
 		clear
 		$prompt
 		echo
