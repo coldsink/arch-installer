@@ -1,5 +1,5 @@
 #! /bin/bash
-prompt="echo "=================================================================================""
+prompt="echo "===========================================================================================""
 clear
 $prompt
 echo
@@ -156,5 +156,6 @@ read -p " -> " network
 		$prompt
 		sleep 0.5s
 		clear
+		cp /arch_install_2.sh /mnt
 		arch-chroot /mnt ./arch_install_2.sh
 		
