@@ -143,7 +143,7 @@ read -p " -> " network
 		clear
 $prompt
 echo
-echo "Installation finished. Rebooting"
+echo "Installation finished. Rebooting... "
 echo
 $prompt
 sleep 1s
