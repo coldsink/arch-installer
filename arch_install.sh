@@ -157,6 +157,4 @@ read -p " -> " network
 		sleep 0.5s
 		clear
 		arch-chroot /mnt ./arch_install_2.sh
-		umount -R /mnt
-		reboot
-
+		
