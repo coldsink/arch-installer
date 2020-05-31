@@ -156,10 +156,8 @@ read -p " -> " network
 		$prompt
 		sleep 0.5s
 		clear
-		cp /arch_install_2.sh /mnt
+		cp arch_install_2.sh /mnt
 		arch-chroot /mnt ./arch_install_2.sh
-		rm -f /mnt/arch_install_2.sh
-		umount -R /mnt
 		echo " > Reboot now? (yes) (no) "
 		read -p " -> " reboot
 		if [ reboot = yes ]
@@ -168,6 +166,9 @@ read -p " -> " network
 			clear
 			killall netctl
 			clear
+			rm -f /mnt/arch_install_2.sh
+			umount -R /mnt
+			reboot
 		else
-			break
+			echo " > Reboot aborted. "
 		fi
