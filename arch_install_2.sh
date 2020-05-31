@@ -1,6 +1,6 @@
 #! /bin/bash
 
-prompt="echo "================================================================================"
+prompt="echo "================================================================================""
 clear
 $prompt
 echo
@@ -12,7 +12,7 @@ sleep 0.5s
 clear
 $prompt
 echo
-echo " > Finalizing locale preferences. " 
+echo " > Finalizing locale preferences... " 
 echo
 $prompt
 echo "en_US.UTF-8 UTF-8 > /etc/locale.gen"
@@ -136,7 +136,7 @@ read -p " -> " network
 		clear
 		$prompt
 		echo
-		echo " > Upon reboot, you will need to enable dhcpcd@$wired_interface.service "
+		echo " > Upon reboot, you will need to enable dhcpcd@$wired_interface.service. "
 		echo
 		$prompt
 		sleep 3s
@@ -144,7 +144,7 @@ read -p " -> " network
 	fi
 $prompt
 echo
-echo "Installation finished. Rebooting... "
+echo "Installation finished. "
 echo
 $prompt
 sleep 1s
