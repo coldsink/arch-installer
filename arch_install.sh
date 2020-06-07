@@ -8,37 +8,6 @@ echo
 $prompt
 sleep 0.5s
 clear
-$prompt
-echo
-echo " > Enter "yes" for wireless. Enter "no" for wired. "
-echo
-$prompt
-echo
-read -p " -> " network
-	if [ $network = yes ]
-	then
-		clear
-		wifi-menu
-		clear
-	else
-		clear
-		$prompt
-		echo
-		ip link
-		echo
-		$prompt
-		echo
-		echo " > Select wired interface. "
-		read -p " -> " interface
-		ip link set up $interface
-		sleep 2s
-		clear
-	fi
-		timedatectl set-ntp true
-		echo " > Scanning drives... "
-		sleep 0.25s
-		clear
-		echo
 		$prompt
 		echo
 		echo " > Select drive to partition. This operation cannot be reverted. (ex. sdX, not /dev/sdX) "
@@ -160,13 +129,12 @@ read -p " -> " network
 		arch-chroot /mnt ./arch_install_2.sh
 		echo " > Reboot now? (yes) (no) "
 		read -p " -> " reboot
-		if [ reboot = yes ]
+		if [ $reboot = yes ]
 		then
 			killall dhcpcd
 			clear
 			killall netctl
 			clear
-			rm -f /mnt/arch_install_2.sh
 			umount -R /mnt
 			reboot
 		else

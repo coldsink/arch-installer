@@ -144,6 +144,7 @@ read -p " -> " network
 	fi
 $prompt
 echo
+rm -f /arch_install_2.sh
 echo "Installation finished. "
 echo
 $prompt
